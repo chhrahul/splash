@@ -10,6 +10,26 @@ function success()
   {
       alert('PDF error');
   }
+  
+  function openFile(f)
+  {
+    var option = {
+    password: null,
+    flatUI: true,
+    showShadows: true,
+    enableThumbs: true,
+    disableRetina: false,
+    enablePreview: true,
+    bookmarks: true,
+    landscapeDoublePage: true,
+    landscapeSingleFirstPage: true,
+    toolbarBackgroundColor: null,
+    textColor: null,
+    enableShare: false,
+    page: 2
+};
+    PDFReader.open(f, options, success, error);
+  }
 function onDeviceReady() {
     var fileUrl = 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf';
   var fileName = 'pdf-sample.pdf';
@@ -17,7 +37,7 @@ function onDeviceReady() {
 	var uri = encodeURI(fileUrl);
   var fileUrl = cordova.file.documentsDirectory;
   //var fileUrl = cordova.file.externalRootDirectory;
-  var option = {};
+  
   
  // alert(fileUrl)
 		fileTransfer.download(
@@ -27,7 +47,7 @@ function onDeviceReady() {
 			entry.file(function (file) {
 				    alert(entry.toURL());
             //alert(file.type);
-            PDFReader.open(entry.toURL(), options, success, error);
+            openFile(entry.toURL());
                 //openFile(entry.toURL(), file.type);
 				
 			},
