@@ -6,8 +6,8 @@ function onDeviceReady() {
   var fileName = 'pdf-sample.pdf';
 	var fileTransfer = new FileTransfer();
 	var uri = encodeURI(fileUrl);
-  //var fileUrl = cordova.file.documentsDirectory;
-  var fileUrl = cordova.file.externalRootDirectory;
+  var fileUrl = cordova.file.documentsDirectory;
+  //var fileUrl = cordova.file.externalRootDirectory;
  
   alert(fileUrl)
 		fileTransfer.download(
