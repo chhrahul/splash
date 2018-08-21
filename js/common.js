@@ -8,15 +8,25 @@ function onDeviceReady() {
 	var uri = encodeURI(fileUrl);
   var fileUrl = cordova.file.documentsDirectory;
   //var fileUrl = cordova.file.externalRootDirectory;
- 
-  alert(fileUrl)
+  var option = {};
+  function success()
+  {
+      alert('PDF opened');
+  }
+  
+  function error()
+  {
+      alert('PDF error');
+  }
+ // alert(fileUrl)
 		fileTransfer.download(
 			uri,
 			fileUrl + "/" + fileName,
 			function (entry) {
 			entry.file(function (file) {
-				    alert(entry.toURL());
-            alert(file.type);
+				    //alert(entry.toURL());
+            //alert(file.type);
+            PDFReader.open(entry.toURL(), options, success, error);
                 //openFile(entry.toURL(), file.type);
 				
 			},
