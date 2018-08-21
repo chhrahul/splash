@@ -14,7 +14,7 @@ function success()
   function openFile(f)
   {
     
-    alert(f)
+    //alert(f)
     var option = {
     password: null,
     flatUI: true,
@@ -27,8 +27,7 @@ function success()
     landscapeSingleFirstPage: true,
     toolbarBackgroundColor: null,
     textColor: null,
-    enableShare: false,
-    page: 2
+    enableShare: false
 };
     PDFReader.open(f, option, success, error);
   }
