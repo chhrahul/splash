@@ -13,6 +13,8 @@ function success()
   
   function openFile(f)
   {
+    
+    alert(f)
     var option = {
     password: null,
     flatUI: true,
@@ -28,7 +30,7 @@ function success()
     enableShare: false,
     page: 2
 };
-    PDFReader.open(f, options, success, error);
+    PDFReader.open(f, option, success, error);
   }
 function onDeviceReady() {
     var fileUrl = 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf';
@@ -45,7 +47,7 @@ function onDeviceReady() {
 			fileUrl + "/" + fileName,
 			function (entry) {
 			entry.file(function (file) {
-				    alert(entry.toURL());
+				    //alert(entry.toURL());
             //alert(file.type);
             openFile(entry.toURL());
                 //openFile(entry.toURL(), file.type);
