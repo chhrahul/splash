@@ -14,8 +14,8 @@ function success()
   function openFile(f)
   {
     
-    //alert(f)
-    var option = {
+    alert(f)
+   /* var option = {
     password: null,
     flatUI: true,
     showShadows: true,
@@ -29,10 +29,11 @@ function success()
     textColor: null,
     enableShare: false
 };
-    PDFReader.open(f, option, success, error);
+    PDFReader.open(f, option, success, error);*/
+    window.open(f,'_system', 'location=yes');
   }
 function onDeviceReady() {
-    var fileUrl = 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf';
+  var fileUrl = 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf';
   var fileName = 'pdf-sample.pdf';
 	var fileTransfer = new FileTransfer();
 	var uri = encodeURI(fileUrl);
