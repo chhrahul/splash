@@ -33,8 +33,8 @@ function success()
     window.open(f,'_system', 'location=yes');
   }
 function onDeviceReady() {
-  var fileUrl = 'http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf';
-  var fileName = 'pdf-sample.pdf';
+  var fileUrl = 'http://www.pdf995.com/samples/pdf.pdf';
+  var fileName = 'pdf.pdf';
 	var fileTransfer = new FileTransfer();
 	var uri = encodeURI(fileUrl);
   var fileUrl = cordova.file.documentsDirectory;
